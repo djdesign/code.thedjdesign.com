@@ -1,0 +1,237 @@
+Using /Users/DJ/sites/trellis/learn-trellis/roots/trellis/ansible.cfg as config file
+[0;34mstatically included: /Users/DJ/sites/trellis/learn-trellis/roots/trellis/roles/deploy/tasks/initialize.yml[0m
+[0;34mstatically included: /Users/DJ/sites/trellis/learn-trellis/roots/trellis/roles/deploy/tasks/update.yml[0m
+[0;34mstatically included: /Users/DJ/sites/trellis/learn-trellis/roots/trellis/roles/deploy/tasks/prepare.yml[0m
+[0;34mstatically included: /Users/DJ/sites/trellis/learn-trellis/roots/trellis/roles/deploy/tasks/build.yml[0m
+[0;34mstatically included: /Users/DJ/sites/trellis/learn-trellis/roots/trellis/roles/deploy/tasks/share.yml[0m
+[0;34mstatically included: /Users/DJ/sites/trellis/learn-trellis/roots/trellis/roles/deploy/tasks/finalize.yml[0m
+[0;34mLoading callback plugin output of type stdout, v2.0 from /usr/local/Cellar/ansible/2.2.0.0_2/libexec/lib/python2.7/site-packages/ansible/plugins/callback/__init__.pyc[0m
+
+PLAYBOOK: deploy.yml ***********************************************************
+[0;34m2 plays in deploy.yml[0m
+
+PLAY [Ensure necessary variables are defined] **********************************
+
+TASK [Ensure environment is defined] *******************************************
+[1;30mtask path: /Users/DJ/sites/trellis/learn-trellis/roots/trellis/variable-check.yml:8[0m
+[0;36mskipping: [localhost] => {
+    "changed": false, 
+    "skip_reason": "Conditional check failed", 
+    "skipped": true
+}[0m
+
+PLAY [Deploy WP site] **********************************************************
+
+TASK [setup] *******************************************************************
+[0;34mUsing module file /usr/local/Cellar/ansible/2.2.0.0_2/libexec/lib/python2.7/site-packages/ansible/modules/core/system/setup.py[0m
+[0;34m<138.68.31.105> ESTABLISH SSH CONNECTION FOR USER: web[0m
+[0;34m<138.68.31.105> SSH: EXEC ssh -vvv -o ForwardAgent=yes -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o User=web -o ConnectTimeout=10 -o ControlPath=/Users/DJ/.ansible/cp/ansible-ssh-%h-%p-%r 138.68.31.105 '/bin/sh -c '"'"'/usr/bin/python && sleep 0'"'"''[0m
+[0;32mok: [138.68.31.105][0m
+
+TASK [Ensure site is valid] ****************************************************
+[1;30mtask path: /Users/DJ/sites/trellis/learn-trellis/roots/trellis/deploy.yml:27[0m
+[0;36mskipping: [138.68.31.105] => {
+    "changed": false, 
+    "skip_reason": "Conditional check failed", 
+    "skipped": true
+}[0m
+
+TASK [Ensure repo is valid] ****************************************************
+[1;30mtask path: /Users/DJ/sites/trellis/learn-trellis/roots/trellis/deploy.yml:33[0m
+[0;36mskipping: [138.68.31.105] => {
+    "changed": false, 
+    "skip_reason": "Conditional check failed", 
+    "skipped": true
+}[0m
+
+TASK [deploy : include] ********************************************************
+[1;30mtask path: /Users/DJ/sites/trellis/learn-trellis/roots/trellis/roles/deploy/tasks/main.yml:2[0m
+
+TASK [deploy : include] ********************************************************
+[1;30mtask path: /Users/DJ/sites/trellis/learn-trellis/roots/trellis/roles/deploy/tasks/initialize.yml:2[0m
+
+TASK [deploy : Initialize] *****************************************************
+[1;30mtask path: /Users/DJ/sites/trellis/learn-trellis/roots/trellis/roles/deploy/tasks/initialize.yml:5[0m
+[0;34mUsing module file /usr/local/Cellar/ansible/2.2.0.0_2/libexec/lib/python2.7/site-packages/ansible/modules/extras/web_infrastructure/deploy_helper.py[0m
+[0;34m<138.68.31.105> ESTABLISH SSH CONNECTION FOR USER: web[0m
+[0;34m<138.68.31.105> SSH: EXEC ssh -vvv -o ForwardAgent=yes -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o User=web -o ConnectTimeout=10 -o ControlPath=/Users/DJ/.ansible/cp/ansible-ssh-%h-%p-%r 138.68.31.105 '/bin/sh -c '"'"'/usr/bin/python && sleep 0'"'"''[0m
+[0;32mok: [138.68.31.105] => {
+    "ansible_facts": {
+        "deploy_helper": {
+            "current_path": "/srv/www/code.thedjdesign.com/current", 
+            "new_release": "20170110223444", 
+            "new_release_path": "/srv/www/code.thedjdesign.com/releases/20170110223444", 
+            "previous_release": null, 
+            "previous_release_path": null, 
+            "project_path": "/srv/www/code.thedjdesign.com", 
+            "releases_path": "/srv/www/code.thedjdesign.com/releases", 
+            "shared_path": "/srv/www/code.thedjdesign.com/shared", 
+            "unfinished_filename": "DEPLOY_UNFINISHED"
+        }
+    }, 
+    "changed": false, 
+    "invocation": {
+        "module_args": {
+            "backup": null, 
+            "clean": true, 
+            "content": null, 
+            "current_path": "current", 
+            "delimiter": null, 
+            "directory_mode": null, 
+            "follow": false, 
+            "force": null, 
+            "group": null, 
+            "keep_releases": 5, 
+            "mode": null, 
+            "owner": null, 
+            "path": "/srv/www/code.thedjdesign.com", 
+            "regexp": null, 
+            "release": null, 
+            "releases_path": "releases", 
+            "remote_src": null, 
+            "selevel": null, 
+            "serole": null, 
+            "setype": null, 
+            "seuser": null, 
+            "shared_path": "shared", 
+            "src": null, 
+            "state": "present", 
+            "unfinished_filename": "DEPLOY_UNFINISHED", 
+            "unsafe_writes": null
+        }, 
+        "module_name": "deploy_helper"
+    }, 
+    "state": "present"
+}[0m
+
+TASK [deploy : include] ********************************************************
+[1;30mtask path: /Users/DJ/sites/trellis/learn-trellis/roots/trellis/roles/deploy/tasks/initialize.yml:11[0m
+
+TASK [deploy : include] ********************************************************
+[1;30mtask path: /Users/DJ/sites/trellis/learn-trellis/roots/trellis/roles/deploy/tasks/update.yml:2[0m
+
+TASK [deploy : Check whether project source path is a git repo] ****************
+[1;30mtask path: /Users/DJ/sites/trellis/learn-trellis/roots/trellis/roles/deploy/tasks/update.yml:5[0m
+[0;34mUsing module file /usr/local/Cellar/ansible/2.2.0.0_2/libexec/lib/python2.7/site-packages/ansible/modules/core/files/stat.py[0m
+[0;34m<138.68.31.105> ESTABLISH SSH CONNECTION FOR USER: web[0m
+[0;34m<138.68.31.105> SSH: EXEC ssh -vvv -o ForwardAgent=yes -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o User=web -o ConnectTimeout=10 -o ControlPath=/Users/DJ/.ansible/cp/ansible-ssh-%h-%p-%r 138.68.31.105 '/bin/sh -c '"'"'/usr/bin/python && sleep 0'"'"''[0m
+[0;32mok: [138.68.31.105] => {
+    "changed": false, 
+    "invocation": {
+        "module_args": {
+            "checksum_algorithm": "sha1", 
+            "follow": false, 
+            "get_checksum": true, 
+            "get_md5": true, 
+            "mime": false, 
+            "path": "/srv/www/code.thedjdesign.com/shared/source/.git"
+        }, 
+        "module_name": "stat"
+    }, 
+    "stat": {
+        "exists": false
+    }
+}[0m
+
+TASK [deploy : Get current git remote URL] *************************************
+[1;30mtask path: /Users/DJ/sites/trellis/learn-trellis/roots/trellis/roles/deploy/tasks/update.yml:10[0m
+[0;36mskipping: [138.68.31.105] => {
+    "changed": false, 
+    "skip_reason": "Conditional check failed", 
+    "skipped": true
+}[0m
+
+TASK [deploy : Update git remote URL] ******************************************
+[1;30mtask path: /Users/DJ/sites/trellis/learn-trellis/roots/trellis/roles/deploy/tasks/update.yml:18[0m
+[0;36mskipping: [138.68.31.105] => {
+    "changed": false, 
+    "skip_reason": "Conditional check failed", 
+    "skipped": true
+}[0m
+
+TASK [deploy : Clone project files] ********************************************
+[1;30mtask path: /Users/DJ/sites/trellis/learn-trellis/roots/trellis/roles/deploy/tasks/update.yml:24[0m
+[0;34mUsing module file /usr/local/Cellar/ansible/2.2.0.0_2/libexec/lib/python2.7/site-packages/ansible/modules/core/source_control/git.py[0m
+[0;34m<138.68.31.105> ESTABLISH SSH CONNECTION FOR USER: web[0m
+[0;34m<138.68.31.105> SSH: EXEC ssh -vvv -o ForwardAgent=yes -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o User=web -o ConnectTimeout=10 -o ControlPath=/Users/DJ/.ansible/cp/ansible-ssh-%h-%p-%r 138.68.31.105 '/bin/sh -c '"'"'/usr/bin/python && sleep 0'"'"''[0m
+[0;37mSystem info:
+  Ansible 2.2.0.0; Darwin
+  Trellis at "Fix #727 - HSTS: default preload to off"[0m
+[0;37m---------------------------------------------------[0m
+[0;31mCloning into '/srv/www/code.thedjdesign.com/shared/source'...
+ERROR: Repository not found.
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+Cloning into '/srv/www/code.thedjdesign.com/shared/source'...
+ERROR: Repository not found.
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+[0m
+[0;31mfatal: [138.68.31.105]: FAILED! => {
+    "changed": false, 
+    "cmd": "/usr/bin/git clone --origin origin '' /srv/www/code.thedjdesign.com/shared/source", 
+    "failed": true, 
+    "invocation": {
+        "module_args": {
+            "accept_hostkey": true, 
+            "bare": false, 
+            "clone": true, 
+            "depth": null, 
+            "dest": "/srv/www/code.thedjdesign.com/shared/source", 
+            "executable": null, 
+            "force": false, 
+            "key_file": null, 
+            "recursive": true, 
+            "reference": null, 
+            "refspec": null, 
+            "remote": "origin", 
+            "repo": "git@github.com:djdesign/code.thedjdesign.git", 
+            "ssh_opts": null, 
+            "track_submodules": false, 
+            "umask": null, 
+            "update": true, 
+            "verify_commit": false, 
+            "version": "master"
+        }, 
+        "module_name": "git"
+    }, 
+    "rc": 128, 
+    "stdout": "", 
+    "stdout_lines": []
+}[0m
+[0;36m...ignoring[0m
+
+TASK [deploy : Failed connection to remote repo] *******************************
+[1;30mtask path: /Users/DJ/sites/trellis/learn-trellis/roots/trellis/roles/deploy/tasks/update.yml:34[0m
+[0;37mSystem info:
+  Ansible 2.2.0.0; Darwin
+  Trellis at "Fix #727 - HSTS: default preload to off"[0m
+[0;37m---------------------------------------------------[0m
+[0;31mGit repo git@github.com:djdesign/code.thedjdesign.git cannot be accessed.
+Please verify the repository exists and you have SSH forwarding set up
+correctly.
+More info:
+> https://roots.io/trellis/docs/deploys/#ssh-keys
+> https://roots.io/trellis/docs/ssh-keys/#cloning-remote-repo-using-ssh-
+agent-forwarding
+[0m
+[0;31mfatal: [138.68.31.105]: FAILED! => {
+    "changed": false, 
+    "failed": true, 
+    "invocation": {
+        "module_args": {
+            "msg": "Git repo git@github.com:djdesign/code.thedjdesign.git cannot be accessed. Please verify the repository exists and you have SSH forwarding set up correctly.\nMore info:\n> https://roots.io/trellis/docs/deploys/#ssh-keys\n> https://roots.io/trellis/docs/ssh-keys/#cloning-remote-repo-using-ssh-agent-forwarding\n"
+        }, 
+        "module_name": "fail"
+    }
+}[0m
+	to retry, use: --limit @/Users/DJ/sites/trellis/learn-trellis/roots/trellis/deploy.retry
+
+PLAY RECAP *********************************************************************
+[0;31m138.68.31.105[0m              : [0;32mok=4   [0m changed=0    unreachable=0    [0;31mfailed=1   [0m
+[0;32mlocalhost[0m                  : ok=0    changed=0    unreachable=0    failed=0   
+
